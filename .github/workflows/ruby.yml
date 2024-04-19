@@ -31,5 +31,7 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Set up Database
+      uses: neondatabase/create-branch-action@v5
     - name: Run tests
       run: bundle exec rake
